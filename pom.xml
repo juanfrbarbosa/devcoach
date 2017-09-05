@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.t2m.devcoach</groupId>
-	<artifactId>t2m</artifactId>
+	<artifactId>devcoach</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>t2m</name>
+	<name>devcoach</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
