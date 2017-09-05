@@ -20,7 +20,8 @@ import javax.persistence.EntityManagerFactory;
 
 /**
  *
- * @author Administrador
+ * @author Juan Felipe dos Reis Barbosa, Rafael Yamagawa Ukiharu, Tiago
+ * Magalhães
  */
 public class EnderecoJpaController implements Serializable {
 
@@ -170,5 +171,5 @@ public class EnderecoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

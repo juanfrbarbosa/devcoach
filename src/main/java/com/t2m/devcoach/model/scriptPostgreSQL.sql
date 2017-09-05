@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 /**
- * Author:  Juan Felipe dos Reis Barbosa
+ * Author:  Juan Felipe dos Reis Barbosa, Rafael Yamagawa Ukiharu, Tiago 
+ * Magalhães
  * Created: 05/09/2017
  */
 

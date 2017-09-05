@@ -22,7 +22,8 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Administrador
+ * @author Juan Felipe dos Reis Barbosa, Rafael Yamagawa Ukiharu, Tiago
+ * Magalhães
  */
 @Entity
 @Table(name = "SESSAO")
@@ -160,5 +161,5 @@ public class Sessao implements Serializable {
     public String toString() {
         return "com.t2m.devcoach.t2m.postgreJPA.Sessao[ id=" + id + " ]";
     }
-    
+
 }

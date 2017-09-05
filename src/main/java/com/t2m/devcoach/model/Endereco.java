@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Administrador
+ * @author Juan Felipe dos Reis Barbosa, Rafael Yamagawa Ukiharu, Tiago
+ * Magalhães
  */
 @Entity
 @Table(name = "ENDERECO")
@@ -160,5 +161,5 @@ public class Endereco implements Serializable {
     public String toString() {
         return "com.t2m.devcoach.t2m.postgreJPA.Endereco[ idEndereco=" + idEndereco + " ]";
     }
-    
+
 }

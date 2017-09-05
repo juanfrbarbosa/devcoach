@@ -23,7 +23,8 @@ import javax.persistence.EntityManagerFactory;
 
 /**
  *
- * @author Administrador
+ * @author Juan Felipe dos Reis Barbosa, Rafael Yamagawa Ukiharu, Tiago
+ * Magalhães
  */
 public class SessaoJpaController implements Serializable {
 
@@ -223,5 +224,5 @@ public class SessaoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
