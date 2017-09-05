@@ -1,4 +1,4 @@
-package com.t2m.devcoach.t2m.exceptions;
+package com.t2m.devcoach.exceptions;
 
 public class NonexistentEntityException extends Exception {
     public NonexistentEntityException(String message, Throwable cause) {

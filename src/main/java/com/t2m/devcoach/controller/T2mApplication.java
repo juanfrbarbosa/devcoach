@@ -1,4 +1,4 @@
-package com.t2m.devcoach.t2m;
+package com.t2m.devcoach.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

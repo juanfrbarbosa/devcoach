@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.t2m.devcoach.t2m.postgreJPA;
+package com.t2m.devcoach.model;
 
 import java.io.Serializable;
 import javax.persistence.Basic;

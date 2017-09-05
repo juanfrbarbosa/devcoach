@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.t2m.devcoach.t2m.postgreJPA;
+package com.t2m.devcoach.model;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,54 +28,45 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Administrador
  */
 @Entity
-@Table(name = "FERRAMENTA")
+@Table(name = "PROGRAMA")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Ferramenta.findAll", query = "SELECT f FROM Ferramenta f")
-    , @NamedQuery(name = "Ferramenta.findByNomeFerramenta", query = "SELECT f FROM Ferramenta f WHERE f.nomeFerramenta = :nomeFerramenta")
-    , @NamedQuery(name = "Ferramenta.findByTipoFerramenta", query = "SELECT f FROM Ferramenta f WHERE f.tipoFerramenta = :tipoFerramenta")
-    , @NamedQuery(name = "Ferramenta.findById", query = "SELECT f FROM Ferramenta f WHERE f.id = :id")})
-public class Ferramenta implements Serializable {
+    @NamedQuery(name = "Programa.findAll", query = "SELECT p FROM Programa p")
+    , @NamedQuery(name = "Programa.findByNomePrograma", query = "SELECT p FROM Programa p WHERE p.nomePrograma = :nomePrograma")
+    , @NamedQuery(name = "Programa.findById", query = "SELECT p FROM Programa p WHERE p.id = :id")})
+public class Programa implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 20)
-    @Column(name = "NOME_FERRAMENTA")
-    private String nomeFerramenta;
-    @Size(max = 20)
-    @Column(name = "TIPO_FERRAMENTA")
-    private String tipoFerramenta;
+    @Size(max = 30)
+    @Column(name = "NOME_PROGRAMA")
+    private String nomePrograma;
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "ID")
     private Integer id;
-    @JoinTable(name = "SESSAO_FERRAMENTA", joinColumns = {
-        @JoinColumn(name = "ID_FERRAMENTA", referencedColumnName = "ID")}, inverseJoinColumns = {
+    @JoinTable(name = "PROGRAMA_SESSAO", joinColumns = {
+        @JoinColumn(name = "ID_PROGRAMA", referencedColumnName = "ID")}, inverseJoinColumns = {
         @JoinColumn(name = "ID_SESSAO", referencedColumnName = "ID")})
     @ManyToMany
     private Collection<Sessao> sessaoCollection;
+    @JoinColumn(name = "DOCUMENTO_PESSOA", referencedColumnName = "DOCUMENTO")
+    @ManyToOne
+    private Pessoa documentoPessoa;
 
-    public Ferramenta() {
+    public Programa() {
     }
 
-    public Ferramenta(Integer id) {
+    public Programa(Integer id) {
         this.id = id;
     }
 
-    public String getNomeFerramenta() {
-        return nomeFerramenta;
+    public String getNomePrograma() {
+        return nomePrograma;
     }
 
-    public void setNomeFerramenta(String nomeFerramenta) {
-        this.nomeFerramenta = nomeFerramenta;
-    }
-
-    public String getTipoFerramenta() {
-        return tipoFerramenta;
-    }
-
-    public void setTipoFerramenta(String tipoFerramenta) {
-        this.tipoFerramenta = tipoFerramenta;
+    public void setNomePrograma(String nomePrograma) {
+        this.nomePrograma = nomePrograma;
     }
 
     public Integer getId() {
@@ -94,6 +86,14 @@ public class Ferramenta implements Serializable {
         this.sessaoCollection = sessaoCollection;
     }
 
+    public Pessoa getDocumentoPessoa() {
+        return documentoPessoa;
+    }
+
+    public void setDocumentoPessoa(Pessoa documentoPessoa) {
+        this.documentoPessoa = documentoPessoa;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -104,10 +104,10 @@ public class Ferramenta implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ferramenta)) {
+        if (!(object instanceof Programa)) {
             return false;
         }
-        Ferramenta other = (Ferramenta) object;
+        Programa other = (Programa) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -116,7 +116,7 @@ public class Ferramenta implements Serializable {
 
     @Override
     public String toString() {
-        return "com.t2m.devcoach.t2m.postgreJPA.Ferramenta[ id=" + id + " ]";
+        return "com.t2m.devcoach.t2m.postgreJPA.Programa[ id=" + id + " ]";
     }
     
 }

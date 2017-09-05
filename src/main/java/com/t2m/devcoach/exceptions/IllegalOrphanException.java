@@ -1,4 +1,4 @@
-package com.t2m.devcoach.t2m.exceptions;
+package com.t2m.devcoach.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

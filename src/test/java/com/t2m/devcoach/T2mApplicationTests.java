@@ -1,4 +1,4 @@
-package com.t2m.devcoach.t2m;
+package com.t2m.devcoach;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
