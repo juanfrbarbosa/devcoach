@@ -160,5 +160,4 @@ public class Pessoa implements Serializable {
     public String toString() {
         return "com.t2m.devcoach.t2m.postgreJPA.Pessoa[ documento=" + documento + " ]";
     }
-
 }
