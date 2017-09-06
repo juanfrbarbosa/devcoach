@@ -16,30 +16,30 @@ import javax.persistence.Persistence;
 public class T2mApplication {
 
     public static void main(String[] args) throws Exception {
-        
-                Pessoa pessoa = new Pessoa();
-        pessoa.setDocumento("1112111");
-        pessoa.setNome("Teste 1 nome");
-        pessoa.setDatanasc(null); //(Date.valueOf("1990-11-11"));
-        pessoa.setEmail("teste1@gmail.com");
 
         EntityManagerFactory objFactory = Persistence.createEntityManagerFactory("com.t2m.devcoach_t2m_jar_0.0.1-SNAPSHOTPU");
         EntityManager manager = objFactory.createEntityManager();
         PessoaJpaController jpa = new PessoaJpaController(objFactory);
         List<Pessoa> lista = jpa.findPessoaEntities();
 
+        Pessoa pessoa = new Pessoa();
+        pessoa.setDocumento("1112111");
+        pessoa.setNome("Teste 1 nome");
+        pessoa.setDatanasc(null); //(Date.valueOf("1990-11-11"));
+        pessoa.setEmail("teste1@gmail.com");
+
         jpa.create(pessoa);
-        
-        manager.getTransaction().begin();
-        manager.persist(pessoa);
-        manager.getTransaction().commit();
-        manager.close();
-        objFactory.close();
 
         for (Pessoa p : lista) {
             System.out.println(" Documento: " + p.getDocumento() + "Nome"
                     + p.getNome() + " Data: " + p.getDatanasc()
                     + " email: " + p.getEmail());
         }
+
+        //manager.getTransaction().begin();
+        //manager.persist(pessoa);
+        //manager.getTransaction().commit();
+        //manager.close();
+        //objFactory.close();
     }
 }
